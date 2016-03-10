@@ -44,7 +44,6 @@ $ docker-compose build
 $ touch .env.db
 $ docker-compose build
 $ docker-compose up
-$ docker-compose up db
 $ docker images
 $ docker-machine ls
 $ docker ps -a
@@ -64,7 +63,9 @@ $ docker rmi $(docker images -a | grep "^<none>" | awk "{print $3}")
 $ docker images
 $ docker-compose build
 $ docker ps
-$ docker-compose up
+
+# To start containers in 'detached' mode
+$ docker-compose up -d
 
 # A way to run migrations without spinning up a new container
 $ docker exec dockerrailsdevdemo_web_1 rake db:create db:migrate
