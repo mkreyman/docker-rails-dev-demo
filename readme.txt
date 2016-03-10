@@ -68,7 +68,10 @@ $ docker ps
 $ docker-compose up -d
 
 # A way to run migrations without spinning up a new container
-$ docker exec dockerrailsdevdemo_web_1 rake db:create db:migrate
+$ docker exec web_1 rake db:create db:migrate
+
+# Access shell
+$ docker exec -it web_1 /bin/bash
 
 $ docker-compose run web env
 $ docker-compose stop
