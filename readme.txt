@@ -77,4 +77,17 @@ $ docker-compose run web env
 $ docker-compose stop
 $ docker-compose --help
 
+# Add docker-machine IP to /etc/hosts, i.e.
+  192.168.99.100 dockerhost
+
+# ... then use it to connect via web browser:
+  http://dockerhost:3000
+
+# ... or with mysql client:
+  host: dockerhost
+  username: root
+  database: docker_rails_dev_demo
+  port: 13306
+
+
 
